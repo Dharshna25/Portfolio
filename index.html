@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dharshna R | Portfolio</title>
+
+  <!-- Font Awesome & Google Fonts -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0; padding: 0; box-sizing: border-box;
+      font-family: 'Open Sans', sans-serif;
+    }
+    html, body {
+      scroll-behavior: smooth;
+      background-color: #0a2424;
+      color: #fff;
+    }
+
+    /* Navbar */
+    header {
+      position: fixed; top: 0; left: 0; width: 100%;
+      background-image: linear-gradient(90deg, #012b2e, #024f4e, #037e7c);
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 1rem 5rem; z-index: 100; box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    }
+    header h2 {
+      color: #fff; font-family: 'Montserrat', sans-serif; font-weight: 700;
+      letter-spacing: 1px;
+    }
+    nav ul {
+      list-style: none; display: flex; gap: 1.5rem;
+    }
+    nav a {
+      text-decoration: none; color: #fff; font-weight: 600;
+      border-bottom: 2px solid transparent; transition: 0.3s;
+    }
+    nav a:hover {
+      border-bottom: 2px solid #00e6d1;
+    }
+
+    section {
+      padding: 6rem 5rem;
+    }
+
+    /* Home */
+    .hero {
+      background: linear-gradient(135deg, rgba(2, 56, 59, 0.7), rgba(67, 113, 116, 0.6)), url('b1.jpeg') center/cover no-repeat;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      padding: 4rem 6rem;
+    }
+
+    .home-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 4rem;
+      width: 100%;
+      max-width: 1100px;
+    }
+
+    .home-left {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+    }
+
+    .home-photo {
+      width: 350px;
+      height: 500px;
+      object-fit: cover;
+      border-radius: 10px;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.5);
+      border: 4px solid #00e6d1;
+    }
+
+    .home-right {
+      flex: 1;
+      text-align: left;
+    }
+
+    .home-right h2 {
+      font-size: 1.8rem;
+      color: #c9fffc;
+    }
+
+    .home-right h1 {
+      font-size: 3.5rem;
+      font-family: 'Montserrat', sans-serif;
+      color: #fff;
+      margin: 0.5rem 0;
+    }
+
+    .home-right h4 {
+      font-size: 1.3rem;
+      color: #b9f8f3;
+      margin-bottom: 1.5rem;
+    }
+
+    .btn-group {
+      display: flex;
+      gap: 1rem;
+    }
+
+    .btn {
+      padding: 0.9rem 1.8rem;
+      border: none;
+      border-radius: 6px;
+      background-color: #00e6d1;
+      color: #012b2e;
+      cursor: pointer;
+      font-weight: 600;
+      transition: 0.3s;
+      font-family: 'Montserrat';
+    }
+
+    .btn:hover {
+      background-color: #fff;
+      color: #00b5ad;
+    }
+
+    /* Responsive Home */
+    @media (max-width: 900px) {
+      .home-container {
+        flex-direction: column;
+        text-align: center;
+      }
+      .home-photo {
+        width: 280px;
+        height: 320px;
+      }
+    }
+
+    /* About */
+    .about {
+      display: flex; align-items: center; justify-content: space-between;
+      background: linear-gradient(135deg, #3a7a78cc, #3a7a78cc);
+    }
+    .about-text { width: 55%; padding-right: 2rem; }
+    .about-text h2 {
+      font-family: 'Montserrat'; font-size: 2.5rem; color: #00e6d1; margin-bottom: 1rem;
+    }
+    .about-text p {
+      margin-bottom: 1rem; line-height: 1.7; font-size: 1.1rem;
+    }
+    .about-img img {
+      width: 400px; height: 550px; border-radius: 20px; object-fit: cover;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.5);
+      border: 4px solid #00e6d1;
+    }
+
+    /* Education */
+.education {
+  display: flex;
+  align-items: center;
+  gap: 20rem;
+  background: linear-gradient(135deg, #639c9acc, #639c9acc);
+  flex-direction: row; /* Image Left, Text Right */
+  font-size: 1.5rem;
+}
+
+.edu-img img {
+  width: 400px;
+  height: 500px;
+  border-radius: 5px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+  border: 4px solid #00e6d1;
+}
+
+.edu-text h2 {
+  font-size: 3rem;
+  font-family: 'Montserrat';
+  color: #00e6d1;
+  margin-bottom: 1rem;
+}
+
+.edu-text li {
+  margin-bottom: 2rem;
+  background-color: rgba(255,255,255,0.1);
+  padding: 1.2rem;
+  border-radius: 50px;
+  font-size: 1rem;
+  list-style: none;
+}
+
+
+    /* Technical Skills */
+    .skills {
+      background: linear-gradient(135deg, #3a7a78cc, #3a7a78cc);
+      text-align: center;
+    }
+    .skills h2 {
+      color: #00e6d1; font-size: 2.3rem; margin-bottom: 0.5rem; font-family: 'Montserrat';
+    }
+    .skills-subtitle {
+      color: #c9fffc; margin-bottom: 2rem;
+    }
+    .skills-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 2rem; justify-items: center;
+    }
+    .skill-card {
+      background: rgba(255,255,255,0.08); padding: 2rem; border-radius: 15px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+      width: 240px; transition: transform 0.3s;
+    }
+    .skill-card:hover { transform: scale(1.05); }
+    .skill-card img {
+      width: 100px; height: 100px; margin-bottom: 1rem;
+    }
+
+    /* Soft Skills */
+    .soft-skills {
+      background: linear-gradient(135deg, #639c9acc, #639c9acc);
+      color: white; text-align: center;
+    }
+    .soft-skills h2 {
+      font-size: 2.3rem; font-family: 'Montserrat'; margin-bottom: 0.5rem; color: #00e6d1;
+    }
+    .soft-skills p.quote {
+      font-style: italic; margin-bottom: 2rem; font-size: 1.2rem; color: #c9fffc;
+    }
+    .soft-grid {
+      display: grid; grid-template-columns: repeat(2, 1fr);
+      gap: 2rem; justify-items: center;
+    }
+    .soft-card {
+      background: rgba(255,255,255,0.1);
+      border-radius: 15px; padding: 2rem;
+      width: 250px; backdrop-filter: blur(5px);
+      box-shadow: 0 5px 15px rgba(0,0,0,0.4);
+    }
+    .soft-card img {
+      width: 130px; height: 130px; margin-bottom: 1rem;
+    }
+
+    /* Projects Section */
+.projects {
+  background: linear-gradient(135deg, #3a7a78cc, #3a7a78cc);
+  color: #fff;
+  padding: 6rem 5rem;
+  text-align: center;
+}
+
+.projects h2 {
+  font-size: 2.2rem;
+  margin-bottom: 2rem;
+  color: #fff;
+}
+
+.project-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.project-image img {
+  width: 450px;
+  height: 300px;
+  border-radius: 20px;
+  object-fit: cover;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.project-text {
+  max-width: 600px;
+  text-align: left;
+}
+
+.project-text h3 {
+  font-size: 1.6rem;
+  margin-bottom: 1rem;
+  color: #fff;
+}
+
+.project-text p {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
+.project-link {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.8rem 1.5rem;
+  background-color: #fff;
+  color: #35A99C;
+  font-weight: 600;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.project-link:hover {
+  background-color: #2794B3;
+  color: #fff;
+}
+
+    /* Certifications */
+    .certifications {
+      background: linear-gradient(135deg, #639c9acc, #639c9acc);
+      color: white; text-align: center;
+    }
+    .certifications h2 {
+      font-size: 2.3rem; color: #00e6d1; font-family: 'Montserrat'; margin-bottom: 1rem;
+    }
+    .cert-grid {
+      display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem; justify-items: center;
+    }
+    .cert-card {
+      background: rgba(255,255,255,0.1);
+      border-radius: 15px; padding: 1rem; width: 300px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+    }
+    .cert-card img {
+      width: 100%; border-radius: 10px; margin-bottom: 1rem;
+    }
+
+    /* Contact */
+    .contact {
+      background: linear-gradient(135deg, #3a7a78cc, #3a7a78cc), center center/cover no-repeat fixed;
+      color: white;
+      text-align: center;
+      padding: 8rem 2rem;
+      position: relative;
+    }
+    .contact h2 {
+      font-size: 2.3rem; color: #00e6d1; font-family: 'Montserrat'; margin-bottom: 2rem;
+    }
+    .contact-info p {
+      margin: 0.5rem 0; font-size: 1.1rem;
+    }
+
+    /* Footer */
+    footer {
+      background-color: #011b1b; color: white; text-align: center; padding: 1rem;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Navbar -->
+  <header>
+    <h2>Dharshna R</h2>
+    <nav>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#certifications">Certifications</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Home -->
+  <section id="home" class="hero">
+    <div class="home-container">
+      <div class="home-left">
+        <img src="d1.jpg" alt="Dharshna R" class="home-photo">
+      </div>
+      <div class="home-right">
+        <h2>Hello, I'm</h2>
+        <h1>Dharshna Ramesh</h1>
+        <h4>Software Engineer Intern | Front-End Developer</h4>
+        <div class="btn-group">
+  <a href="#contact" class="btn">Hire Me</a>
+  <a href="Resume Dharshna_R.pdf" class="btn" download>Get Resume</a>
+</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about" class="about">
+    <div class="about-text">
+      <h2>About Me</h2>
+      <br>
+      <p>Motivated engineering student eager to apply academic knowledge and technical skills to solve real-world challenges. Passionate about building efficient systems, exploring new technologies, and contributing effectively to organizational success.</p>
+      <p>Driven by curiosity, I strive to enhance both my technical and interpersonal skills, adapting to new environments with enthusiasm and creativity.</p>
+    </div>
+    <div class="about-img">
+      <img src="d5.jpg" alt="Dharshna R Photo">
+    </div>
+  </section>
+
+  <!-- Education -->
+<section id="education" class="education">
+  <div class="edu-img">
+    <img src="edu.jpeg" alt="Education Image">
+  </div>
+  <div class="edu-text">
+    <h1 style="color: #00b5ad;">Education</h1>
+    <br>
+    <h2><ul style="color: #fff;">
+      <li><strong>B.E. Electronics and Communication Engineering</strong><br>M. Kumarasamy College of Engineering, Karur<br><em>CGPA: 8.20 (2022–2026)</em></li>
+      <li><strong>Higher Secondary Certificate</strong><br>Bharathi Higher Secondary School, Velliyanai<br><em>Percentage: 87% (2022)</em></li>
+      <li><strong>Secondary School Certificate</strong><br>Bharathi Higher Secondary School, Velliyanai<br><em>Percentage: 83% (2020)</em></li>
+    </ul></h2>
+  </div>
+</section>
+
+
+  <!-- Skills -->
+  <section id="skills" class="skills">
+    <h2>Technical Skills</h2>
+    <h3 class="skills-subtitle">Languages | Tools | Technologies</h3>
+    <div class="skills-grid">
+      <div class="skill-card"><img src="java.png" alt="Java"><h4>Java</h4></div>
+      <div class="skill-card"><img src="c++.png" alt="C++"><h4>C++</h4></div>
+      <div class="skill-card"><img src="web.jpeg" alt="HTML CSS"><h4>HTML & CSS</h4></div>
+      <div class="skill-card"><img src="sql.png" alt="SQL"><h4>SQL</h4></div>
+      <div class="skill-card"><img src="mysql.webp" alt="MySQL"><h4>MySQL</h4></div>
+      <div class="skill-card"><img src="git.png" alt="GitHub"><h4>GitHub</h4></div>
+    </div>
+  </section>
+
+  <!-- Soft Skills -->
+  <section class="soft-skills">
+    <h2>Soft Skills</h2>
+    <p class="quote">“Soft skills build strong minds and stronger teams.”</p>
+    <div class="soft-grid">
+      <div class="soft-card"><img src="s1.jpeg" alt="Good Listener"><h4>Good Listener</h4></div>
+      <div class="soft-card"><img src="s2.jpeg" alt="Time Management"><h4>Time Management</h4></div>
+      <div class="soft-card"><img src="s3.jpeg" alt="Teamwork"><h4>Teamwork</h4></div>
+      <div class="soft-card"><img src="s4.jpeg" alt="Adaptability"><h4>Adaptability</h4></div>
+    </div>
+  </section>
+  <!-- Projects -->
+<section id="projects" class="projects">
+  <h2>My Project</h2>
+  <div class="project-container">
+    <div class="project-image">
+      <img src="project.jpeg" alt="Next-Gen Solar-Powered Hydroponics System">
+    </div>
+    <div class="project-text">
+      <h3>Next-Gen Solar-Powered Hydroponics System with IoT Integration</h3>
+      <p>
+        Developed a solar-powered hydroponics system for urban farming with IoT-based monitoring.
+        Enabled real-time water and temperature tracking for sustainable and eco-friendly agriculture.
+      </p>
+      <p><strong>Team Size:</strong> 4 | <strong>Role:</strong> Team Member</p>
+      <a href="https://github.com/Dharshna25/Sustainable-Urban-Farming-Using-Hydroponics" target="_blank" class="project-link">
+        <i class="fa-brands fa-github"></i> View on GitHub
+      </a>
+    </div>
+  </div>
+</section>
+
+  <!-- Certifications -->
+  <section id="certifications" class="certifications">
+    <h2>Certifications</h2>
+    <div class="cert-grid">
+      <div class="cert-card"><img src="cert1.jpg" alt="Certificate 1"><p>HTML & CSS Bootcamp – LetsUpgrade</p></div>
+      <div class="cert-card"><img src="cert2.jpg" alt="Certificate 2"><p>Programming using Java – Infosys Springboard</p></div>
+      <div class="cert-card"><img src="cert4.jpg" alt="Certificate 3"><p>Crash Course on Python – Coursera</p></div>
+      <div class="cert-card"><img src="cert5.jpg" alt="Certificate 4"><p>SQL (Intermediate), Java (Basic) – HackerRank</p></div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+<section id="contact" class="contact">
+  <h2>Contact Me</h2>
+  <div class="contact-info">
+    <p>
+      <i class="fa-solid fa-envelope"></i>
+      <a href="mailto:dharshnaramesh2504@gmail.com" style="color:#00e6d1; text-decoration:none;">
+        dharshnaramesh2504@gmail.com
+      </a>
+    </p>
+
+    <p>
+      <i class="fa-solid fa-phone"></i>
+      <a href="tel:+918015862107" style="color:#00e6d1; text-decoration:none;">
+        +91 8015862107
+      </a>
+    </p>
+
+    <p>
+      <i class="fa-brands fa-linkedin"></i>
+      <a href="https://www.linkedin.com/in/dharshna-ramesh-47967225a" target="_blank" style="color:#00e6d1; text-decoration:none;">
+        LinkedIn
+      </a>
+      |
+      <i class="fa-brands fa-github"></i>
+      <a href="https://github.com/Dharshna25" target="_blank" style="color:#00e6d1; text-decoration:none;">
+        GitHub
+      </a>
+    </p>
+  </div>
+</section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 Dharshna R | Designed with 💚</p>
+  </footer>
+
+</body>
+</html>
